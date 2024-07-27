@@ -1,0 +1,19 @@
+{
+  "name": "practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "tailwindcss build -i src/css/styles.css -o public/styles.css",
+    "watch-css": "npx tailwindcss -i ./src/css/styles.css -o ./public/styles.css --watch",
+    "minified-css": "npx tailwindcss -i ./src/css/styles.css -o ./public/minified.css --watch --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.5",
+    "tailwindcss": "^3.4.7"
+  }
+}

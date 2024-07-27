@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+
+@tailwind base;
+
+@layer base {
+  h1 {
+    @apply text-7xl;
+  }
+  li a {
+    @apply text-xl;
+  }
+  p {
+    @apply text-3xl;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;

@@ -2,3 +2,4 @@ node_modules
 .vscode
 .prettierrc.json
 tailwind-default.config.js
+tailwind.config.js

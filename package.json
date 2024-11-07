@@ -1,12 +1,12 @@
 {
-  "name": "practice",
+  "name": "portfolio",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build-css": "tailwindcss build -i src/css/styles.css -o public/styles.css",
-    "watch-css": "npx tailwindcss -i ./src/css/styles.css -o ./public/styles.css --watch",
-    "minified-css": "npx tailwindcss -i ./src/css/styles.css -o ./public/minified.css --watch --minify"
+    "watch-css": "npx tailwindcss -i src/css/styles.css -o ./public/styles.css --watch",
+    "minified-css": "npx tailwindcss -i src/css/styles.css -o ./public/minified.css --watch --minify"
   },
   "keywords": [],
   "author": "",

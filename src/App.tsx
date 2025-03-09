@@ -9,7 +9,7 @@ import { NumberTicker } from "@components/magicui/number-ticker.tsx";
 function App() {
   const [value, setValue] = useState<number>(0);
   const [startAnimation, setStartAnimation] = useState<boolean>(false);
-  const [showPercent] = useState<boolean>(true);
+  const [_showPercent] = useState<boolean>(true);
 
   useEffect(() => {
     const timeout = setTimeout(() => {

@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { popParent, popAnimation } from "@constants/variants.ts";
+import profile from "@assets/profile.jpg";
 
 const About = () => {
   const images: Record<string, object> = import.meta.glob(
@@ -13,11 +14,7 @@ const About = () => {
         <h1 className="text-cPink">About Me</h1>
         <div className="flex items-center gap-36">
           <div>
-            <img
-              src="/src/assets/profile.jpg"
-              alt=""
-              className="rounded-full"
-            />
+            <img src={profile} alt="" className="rounded-full" />
           </div>
           <p className="text-fluid-xl!">
             I'm a full-stack developer & UI & UX designer with a passion for

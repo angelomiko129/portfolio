@@ -5,7 +5,7 @@ import { MdOutlineComputer } from "react-icons/md";
 import { popAnimation } from "@constants/animation.ts";
 import { parentAnimation, slideUpAnimation } from "@constants/variants.ts";
 import { StartAnimationProp } from "@/types/animation.ts";
-import TypingText from "../components/TypingText.tsx";
+import TypingText from "@components/TypingText.tsx";
 
 const Nav = ({ startAnimation }: StartAnimationProp) => {
   const { scrollY } = useScroll();
@@ -17,7 +17,7 @@ const Nav = ({ startAnimation }: StartAnimationProp) => {
   return (
     <>
       <motion.nav
-        className={`font-gabarito text-fluid-md fixed top-0 left-0 z-20 flex w-screen items-center justify-between px-20 py-8 transition-all ${
+        className={`font-gabarito text-fluid-md fixed top-0 left-0 z-20 flex w-screen items-center justify-start gap-10 px-10 py-8 transition-all sm:justify-between sm:px-20 ${
           isScrolled ? "bg-dark/5 backdrop-blur-sm" : "bg-transparent"
         }`}
       >
@@ -37,7 +37,7 @@ const Nav = ({ startAnimation }: StartAnimationProp) => {
           <TypingText text="y6miko.dev" speed={150} />
         </motion.p>
         <motion.ul
-          className="flex items-center gap-10"
+          className="hidden items-center gap-10 sm:flex"
           variants={parentAnimation}
           initial="hidden"
           animate={startAnimation && "show"}

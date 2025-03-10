@@ -66,7 +66,6 @@ body {
 h1 {
   font-size: var(--text-fluid-xxxl);
   font-family: var(--font-clashDisplay);
-  font-weight: 500;
 }
 
 h2 {
@@ -76,10 +75,6 @@ h2 {
 
 p {
   font-size: var(--text-fluid-md);
-}
-
-ul {
-  font-weight: 500;
 }
 
 li {

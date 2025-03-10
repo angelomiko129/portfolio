@@ -27,11 +27,23 @@ function App() {
     }
   }, [value]);
 
+  useEffect(() => {
+    if (!startAnimation) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [startAnimation]);
+
   return (
     // Loading screen
-    <div className="text-cWhite relative sm:mx-20">
+    <div className="text-cWhite relative px-4 sm:mx-20">
       {!startAnimation && (
-        <div className="bg-dark fixed inset-0 z-50 flex h-screen items-center justify-center">
+        <div className="bg-dark fixed inset-0 z-50 flex h-svh items-center justify-center">
           <NumberTicker
             value={value}
             className="font-clashDisplay text-9xl"

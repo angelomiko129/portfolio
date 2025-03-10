@@ -7,7 +7,7 @@ const Socials = ({ startAnimation }: StartAnimationProp) => {
   return (
     <>
       <motion.div
-        className="fixed bottom-6 left-20 z-10"
+        className="fixed bottom-6 left-20 z-10 hidden sm:block"
         initial="hidden"
         animate={startAnimation && "show"}
       >

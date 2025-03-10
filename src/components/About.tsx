@@ -10,11 +10,15 @@ const About = () => {
 
   return (
     <>
-      <section className="flex h-screen flex-col items-center justify-center gap-8 px-40">
+      <section className="flex min-h-screen flex-col items-center justify-center gap-24 py-16 sm:px-40">
         <h1 className="text-cPink">About Me</h1>
-        <div className="flex items-center gap-36">
+        <div className="flex flex-col items-center gap-10 sm:flex-row sm:gap-36">
           <div>
-            <img src={profile} alt="" className="rounded-full" />
+            <img
+              src={profile}
+              alt=""
+              className="size-56 rounded-full sm:size-full"
+            />
           </div>
           <p className="text-fluid-xl!">
             I'm a full-stack developer & UI & UX designer with a passion for
@@ -23,7 +27,7 @@ const About = () => {
           </p>
         </div>
 
-        <div className="flex w-full items-center justify-around gap-24">
+        <div className="flex w-full flex-col items-center justify-around gap-14 sm:flex-row sm:gap-24">
           <h1>Tech Stack</h1>
           <motion.div
             className="grid grid-cols-3 gap-8"
@@ -37,7 +41,7 @@ const About = () => {
                 key={index}
                 src={img.default}
                 alt={`Image ${index + 1}`}
-                className="h-32 w-full"
+                className="h-24 w-full sm:h-28"
                 variants={popAnimation}
               />
             ))}

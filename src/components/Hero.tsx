@@ -12,8 +12,8 @@ import { WordRotate } from "./magicui/word-rotate";
 
 const Hero = ({ startAnimation }: StartAnimationProp) => {
   return (
-    <section className="font-geist relative flex h-screen flex-col items-center justify-center">
-      <div className="flex items-center justify-center gap-16">
+    <section className="font-geist relative flex h-screen items-center justify-center">
+      <div className="flex flex-col items-center justify-center gap-16 sm:flex-row">
         <motion.div
           className="leading-none tracking-normal"
           initial="hidden"
@@ -47,7 +47,7 @@ const Hero = ({ startAnimation }: StartAnimationProp) => {
             A
           </motion.span>
           <motion.span
-            className="text-cWhite absolute top-12 left-1/2 -translate-x-1/2 text-8xl font-extrabold opacity-25"
+            className="text-cWhite absolute top-12 left-1/2 -translate-x-1/2 text-6xl font-extrabold opacity-25 sm:text-8xl"
             variants={slideRightAnimation}
           >
             DEVELOPER

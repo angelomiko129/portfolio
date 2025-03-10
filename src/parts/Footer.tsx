@@ -4,9 +4,9 @@ import socialLinks from "@constants/socials.ts";
 const Footer = () => {
   return (
     <>
-      <footer className="font-clashDisplay px-40">
+      <footer className="font-clashDisplay px-8 sm:px-40">
         <h1>CONTACTS</h1>
-        <div className="grid grid-cols-3 py-10">
+        <div className="grid grid-cols-1 gap-10 py-10 sm:grid-cols-3">
           <div>
             <div className="flex flex-col gap-4">
               <p className="text-cWhite/50">Email:</p>

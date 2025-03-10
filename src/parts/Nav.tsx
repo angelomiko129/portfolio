@@ -24,7 +24,7 @@ const Nav = ({ startAnimation }: StartAnimationProp) => {
         <motion.img
           src={logo}
           alt="logo"
-          className="size-20"
+          className="size-16 sm:size-20"
           {...(startAnimation ? popAnimation : {})}
         />
         <motion.p

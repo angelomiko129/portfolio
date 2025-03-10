@@ -46,7 +46,7 @@ function App() {
         <div className="bg-dark fixed inset-0 z-50 flex h-svh items-center justify-center">
           <NumberTicker
             value={value}
-            className="font-clashDisplay text-9xl"
+            className="font-clashDisplay text-7xl sm:text-9xl"
             showPercent
           />
         </div>

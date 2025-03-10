@@ -16,11 +16,11 @@ const About = () => {
           <div>
             <img
               src={profile}
-              alt=""
+              alt="profile picture"
               className="size-56 rounded-full sm:size-full"
             />
           </div>
-          <p className="text-fluid-xl!">
+          <p className="text-fluid-xl! text-center sm:text-start">
             I'm a full-stack developer & UI & UX designer with a passion for
             blending technical expertise with creative edge. Driven by
             curiosity, I always try to explore and learn new skills.

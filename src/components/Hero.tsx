@@ -15,7 +15,7 @@ const Hero = ({ startAnimation }: StartAnimationProp) => {
     <section className="font-geist relative flex h-screen items-center justify-center">
       <div className="flex flex-col items-center justify-center gap-16 sm:flex-row">
         <motion.div
-          className="leading-none tracking-normal"
+          className="text-center leading-none tracking-normal sm:text-start"
           initial="hidden"
           animate={startAnimation && "show"}
           variants={parentAnimation}

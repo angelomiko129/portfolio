@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
-import { popParent, popAnimation } from "@constants/variants.ts";
 import profile from "@assets/profile.jpg";
+import { popParent, popAnimation } from "@constants/variants.ts";
 
 const About = () => {
   const images: Record<string, object> = import.meta.glob(

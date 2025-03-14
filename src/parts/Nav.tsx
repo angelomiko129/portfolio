@@ -9,9 +9,9 @@ import TypingText from "@components/TypingText.tsx";
 
 const Nav = ({ startAnimation }: StartAnimationProp) => {
   const { scrollY } = useScroll();
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
+  useMotionValueEvent(scrollY, "change", (latest: number) => {
     setIsScrolled(latest > 50);
   });
   return (

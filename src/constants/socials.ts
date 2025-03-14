@@ -5,7 +5,7 @@ import {
   FaStackOverflow,
 } from "react-icons/fa";
 
-const socialLinks = [
+const socials = [
   { name: "Github", url: "https://github.com/angelomiko129", icon: FaGithub },
   {
     name: "LinkedIn",
@@ -24,4 +24,4 @@ const socialLinks = [
   },
 ];
 
-export default socialLinks;
+export default socials;

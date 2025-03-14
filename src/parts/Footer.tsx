@@ -1,5 +1,5 @@
 import { MdOutlineLocationOn, MdEmail } from "react-icons/md";
-import socialLinks from "@constants/socials.ts";
+import socials from "@constants/socials.ts";
 
 const Footer = () => {
   return (
@@ -24,7 +24,7 @@ const Footer = () => {
           <div>
             <p className="text-cWhite/50">Socials:</p>
             <ul className="text-fluid-lg font-normal!">
-              {socialLinks.map((social, index) => (
+              {socials.map((social, index) => (
                 <li key={index}>
                   <a
                     href={social.url}

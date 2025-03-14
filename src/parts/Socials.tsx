@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { parentAnimation, slideUpAnimation } from "@constants/variants.ts";
+import socials from "@constants/socials.ts";
 import { StartAnimationProp } from "@/types/animation.ts";
-import socialLinks from "@constants/socials.ts";
 
 const Socials = ({ startAnimation }: StartAnimationProp) => {
   return (
@@ -15,7 +15,7 @@ const Socials = ({ startAnimation }: StartAnimationProp) => {
           variants={parentAnimation}
           className="inline-flex flex-col gap-8 rounded-full border-2 px-2 py-4"
         >
-          {socialLinks.map((social, index) => (
+          {socials.map((social, index) => (
             <motion.li key={index} variants={slideUpAnimation}>
               <motion.div
                 whileHover={{ scale: 1.3 }}

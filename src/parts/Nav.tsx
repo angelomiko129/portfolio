@@ -7,13 +7,24 @@ import { parentAnimation, slideUpAnimation } from "@constants/variants.ts";
 import { StartAnimationProp } from "@/types/animation.ts";
 import TypingText from "@components/TypingText.tsx";
 
-const Nav = ({ startAnimation }: StartAnimationProp) => {
+interface NavProps extends StartAnimationProp {
+  homeRef: React.RefObject<HTMLDivElement>;
+  aboutRef: React.RefObject<HTMLDivElement>;
+  worksRef: React.RefObject<HTMLDivElement>;
+}
+
+const Nav = ({ startAnimation, homeRef, aboutRef, worksRef }: NavProps) => {
   const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
+
+  const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   useMotionValueEvent(scrollY, "change", (latest: number) => {
     setIsScrolled(latest > 50);
   });
+
   return (
     <>
       <motion.nav
@@ -47,6 +58,11 @@ const Nav = ({ startAnimation }: StartAnimationProp) => {
               key={index}
               variants={slideUpAnimation}
               className="cursor-pointer no-underline! hover:underline!"
+              onClick={() => {
+                if (item === "Home") scrollToSection(homeRef);
+                if (item === "About") scrollToSection(aboutRef);
+                if (item === "Works") scrollToSection(worksRef);
+              }}
             >
               {item}
             </motion.li>

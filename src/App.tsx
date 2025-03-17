@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, useScroll } from "motion/react";
 import Nav from "@parts/Nav.tsx";
 import Socials from "@parts/Socials.tsx";
 import Footer from "@parts/Footer.tsx";
 import Hero from "@components/Hero.tsx";
 import About from "@components/About.tsx";
+import Works from "@components/Works.tsx";
 import { NumberTicker } from "@components/magicui/number-ticker.tsx";
 
 function App() {
@@ -13,6 +14,10 @@ function App() {
   const [_showPercent] = useState<boolean>(true);
 
   const { scrollYProgress } = useScroll();
+
+  const homeRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const worksRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -55,11 +60,12 @@ function App() {
           right: 0,
           height: 10,
           originX: 0,
+          zIndex: 40,
         }}
         className="bg-cPink"
       />
       {!startAnimation && (
-        <div className="bg-dark fixed inset-0 z-50 flex h-svh items-center justify-center">
+        <div className="bg-dark fixed inset-0 z-40 flex h-svh items-center justify-center">
           <NumberTicker
             value={value}
             className="font-clashDisplay text-7xl sm:text-9xl"
@@ -68,10 +74,22 @@ function App() {
         </div>
       )}
 
-      <Nav startAnimation={startAnimation} />
+      <Nav
+        startAnimation={startAnimation}
+        homeRef={homeRef}
+        aboutRef={aboutRef}
+        worksRef={worksRef}
+      />
       <Socials startAnimation={startAnimation} />
-      <Hero startAnimation={startAnimation} />
-      <About />
+      <div ref={homeRef}>
+        <Hero startAnimation={startAnimation} />
+      </div>
+      <div ref={aboutRef}>
+        <About />
+      </div>
+      <div ref={worksRef}>
+        <Works />
+      </div>
       <Footer />
     </div>
   );

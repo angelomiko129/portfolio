@@ -15,9 +15,9 @@ function App() {
 
   const { scrollYProgress } = useScroll();
 
-  const homeRef = useRef<HTMLDivElement>(null);
-  const aboutRef = useRef<HTMLDivElement>(null);
-  const worksRef = useRef<HTMLDivElement>(null);
+  const homeRef = useRef<HTMLDivElement>(null!);
+  const aboutRef = useRef<HTMLDivElement>(null!);
+  const worksRef = useRef<HTMLDivElement>(null!);
 
   useEffect(() => {
     const timeout = setTimeout(() => {

@@ -51,19 +51,11 @@ const Nav = ({ startAnimation, homeRef, aboutRef, worksRef }: NavProps) => {
           <TypingText text="y6miko.dev" speed={150} />
         </motion.p>
         <div className="sm:hidden">
-          {isMenuOpen ? (
-            <FiX
-              size={30}
-              className="cursor-pointer"
-              onClick={() => setIsMenuOpen(false)}
-            />
-          ) : (
-            <FiMenu
-              size={30}
-              className="cursor-pointer"
-              onClick={() => setIsMenuOpen(true)}
-            />
-          )}
+          <FiMenu
+            size={30}
+            className="cursor-pointer"
+            onClick={() => setIsMenuOpen(true)}
+          />
         </div>
         <motion.ul
           className="hidden items-center gap-10 sm:flex"
@@ -94,6 +86,11 @@ const Nav = ({ startAnimation, homeRef, aboutRef, worksRef }: NavProps) => {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: "-100%" }}
         >
+          <FiX
+            size={30}
+            className="absolute top-10 right-10 cursor-pointer"
+            onClick={() => setIsMenuOpen(false)}
+          />
           <ul className="flex flex-col items-center gap-8">
             {["Home", "About", "Works"].map((item, index) => (
               <li

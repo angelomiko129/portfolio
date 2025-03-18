@@ -78,7 +78,7 @@ p {
 }
 
 li {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 :root {

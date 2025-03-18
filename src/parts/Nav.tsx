@@ -82,9 +82,10 @@ const Nav = ({ startAnimation, homeRef, aboutRef, worksRef }: NavProps) => {
       {isMenuOpen && (
         <motion.div
           className="bg-dark/90 fixed top-0 left-0 z-20 flex h-screen w-screen flex-col items-center justify-center text-white sm:hidden"
-          initial={{ opacity: 0, x: "-100%" }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: "-100%" }}
+          initial={{ opacity: 0, y: "-100%" }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: "-100%" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
         >
           <FiX
             size={30}
@@ -93,17 +94,25 @@ const Nav = ({ startAnimation, homeRef, aboutRef, worksRef }: NavProps) => {
           />
           <ul className="flex flex-col items-center gap-8">
             {["Home", "About", "Works"].map((item, index) => (
-              <li
+              <motion.li
                 key={index}
-                className="cursor-pointer text-xl"
+                className="text-fluid-lg cursor-pointer"
                 onClick={() => {
                   if (item === "Home") scrollToSection(homeRef);
                   if (item === "About") scrollToSection(aboutRef);
                   if (item === "Works") scrollToSection(worksRef);
                 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{
+                  duration: 0.3,
+                  ease: "easeInOut",
+                  delay: index * 0.1,
+                }}
               >
                 {item}
-              </li>
+              </motion.li>
             ))}
           </ul>
         </motion.div>

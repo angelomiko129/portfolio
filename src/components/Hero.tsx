@@ -10,10 +10,10 @@ import {
 import { pop } from "@constants/animation.ts";
 import { StartAnimationProp } from "@/types/animation.ts";
 
-const words = ["FRONTEND", "BACKEND"];
+const words: string[] = ["FRONTEND", "BACKEND"];
 
-const Hero = ({ startAnimation }: StartAnimationProp) => {
-  const [index, setIndex] = useState(0);
+const Hero: React.FC<StartAnimationProp> = ({ startAnimation }) => {
+  const [index, setIndex] = useState<number>(0);
 
   useEffect(() => {
     const interval = setInterval(() => {

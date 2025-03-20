@@ -3,8 +3,8 @@ import profile from "@assets/profile.jpg";
 import { FaFacebook, FaTwitter, FaInstagram, FaTiktok } from "react-icons/fa";
 import { popParent, popAnimation } from "@constants/variants.ts";
 
-const About = () => {
-  const images: Record<string, object> = import.meta.glob(
+const About: React.FC = () => {
+  const images: Record<string, { default: string }> = import.meta.glob(
     "/src/assets/stacks/*.svg",
     { eager: true },
   );
@@ -13,14 +13,14 @@ const About = () => {
     <>
       <section className="section">
         <h1>About Me</h1>
-        <div className="bg-cWhite text-darkBrown font-clashDisplay flex flex-col items-center gap-10 rounded-xl p-6 sm:size-1/2 mx-4">
+        <div className="bg-cWhite text-darkBrown font-clashDisplay mx-4 flex flex-col items-center gap-10 rounded-xl p-6 sm:size-1/2">
           <img
             src={profile}
             alt="profile picture"
             className="size-96 rounded-lg"
-            />
-            <h2>Angelo Miko Botabara</h2>
-          <p className="text-fluid-lg! text-center w-96">
+          />
+          <h2>Angelo Miko Botabara</h2>
+          <p className="text-fluid-lg! w-96 text-center">
             I'm a full-stack developer & UI & UX designer with a passion for
             blending technical expertise with creative edge. Driven by
             curiosity, I always try to explore and learn new skills.
@@ -42,7 +42,7 @@ const About = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            {Object.values(images).map((img: any, index) => (
+            {Object.values(images).map((img, index) => (
               <motion.img
                 key={index}
                 src={img.default}

@@ -1,4 +1,6 @@
-export const popAnimation: Object = {
+import { Variants } from "motion/react";
+
+export const popAnimation: Variants = {
   initial: { opacity: 0, scale: 0, rotateZ: 0 },
   animate: {
     opacity: 1,

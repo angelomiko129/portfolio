@@ -29,7 +29,7 @@ const Hero = ({ startAnimation }: StartAnimationProp) => {
         <motion.img
           src={logo}
           alt="logo"
-          className="z-10 size-44"
+          className="z-10 size-64 sm:size-80"
           initial="hidden"
           animate={startAnimation && "show"}
           variants={{ pop }}

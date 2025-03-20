@@ -17,7 +17,7 @@ const Works = () => {
     <>
       <section className="section font-clashDisplay">
         <h1>My Works</h1>
-        <div className="grid grid-cols-1 gap-4 rounded-2xl sm:grid-cols-2 items-center">
+        <div className="grid grid-cols-1 items-center gap-4 rounded-2xl sm:grid-cols-2">
           <div className="flex flex-col">
             <img src={recipeats} alt="works image" />
             <div className="bg-cPink flex items-center justify-between px-4 py-2">
@@ -27,7 +27,7 @@ const Works = () => {
                 <GoArrowUpRight size={25} className="place-items-start" />
               </div>
             </div>
-            <div className="bg-darkBrown flex flex-col justify-between p-4">
+            <div className="bg-darkBrown flex flex-col justify-center p-4">
               <Tags techStack={techStack} />
             </div>
           </div>

@@ -8,8 +8,9 @@ interface TagProps {
 const Tag: React.FC<TagProps> = ({ label }) => {
   return (
     <motion.button
-      className="hover:bg-cPink m-4 cursor-pointer rounded-sm px-4 py-3 border"
+      className="hover:bg-cPink m-4 cursor-pointer rounded-sm border px-4 py-3"
       whileHover={{ scale: 1.15 }}
+      whileTap={{ scale: 1.15, backgroundColor: "#d84040" }}
     >
       {label}
     </motion.button>

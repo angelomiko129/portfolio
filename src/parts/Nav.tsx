@@ -4,14 +4,8 @@ import logo from "../assets/icon.svg";
 import { MdOutlineComputer } from "react-icons/md";
 import { FiMenu, FiX } from "react-icons/fi";
 import { parentAnimation, slideUpAnimation } from "@constants/variants.ts";
+import { NavProps } from "@/constants/props";
 import TypingText from "@components/TypingText.tsx";
-
-interface NavProps {
-  startAnimation: boolean;
-  homeRef: React.RefObject<HTMLDivElement>;
-  aboutRef: React.RefObject<HTMLDivElement>;
-  worksRef: React.RefObject<HTMLDivElement>;
-}
 
 const Nav = ({ startAnimation, homeRef, aboutRef, worksRef }: NavProps) => {
   const { scrollY } = useScroll();
@@ -19,8 +13,18 @@ const Nav = ({ startAnimation, homeRef, aboutRef, worksRef }: NavProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
-    ref.current?.scrollIntoView({ behavior: "smooth" });
-    setIsMenuOpen(false);
+    if (ref.current) {
+      const offset = 50;
+      const top =
+        ref.current.getBoundingClientRect().top + window.scrollY - offset;
+
+      window.scrollTo({
+        top,
+        behavior: "smooth",
+      });
+
+      setIsMenuOpen(false);
+    }
   };
 
   useMotionValueEvent(scrollY, "change", (latest: number) => {

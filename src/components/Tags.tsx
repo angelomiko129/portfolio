@@ -1,9 +1,5 @@
-import React from "react";
 import { motion } from "framer-motion";
-
-interface TagProps {
-  label: string;
-}
+import { TagProps, TagsProps } from "@/constants/props";
 
 const Tag: React.FC<TagProps> = ({ label }) => {
   return (
@@ -16,10 +12,6 @@ const Tag: React.FC<TagProps> = ({ label }) => {
     </motion.button>
   );
 };
-
-interface TagsProps {
-  techStack: string[];
-}
 
 const Tags: React.FC<TagsProps> = ({ techStack }) => {
   return (

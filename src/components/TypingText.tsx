@@ -1,10 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-
-interface TypingTextProps {
-  text: string;
-  speed?: number;
-}
+import { TypingTextProps } from "@/constants/props";
 
 const TypingText: React.FC<TypingTextProps> = ({ text, speed = 100 }) => {
   const [displayedText, setDisplayedText] = useState<string>("");

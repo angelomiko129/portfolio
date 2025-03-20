@@ -2,13 +2,12 @@ import { useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import logo from "../assets/icon.svg";
 import { MdOutlineComputer } from "react-icons/md";
-import { popAnimation } from "@constants/animation.ts";
 import { parentAnimation, slideUpAnimation } from "@constants/variants.ts";
-import { StartAnimationProp } from "@/types/animation.ts";
 import TypingText from "@components/TypingText.tsx";
 import { FiMenu, FiX } from "react-icons/fi";
 
-interface NavProps extends StartAnimationProp {
+interface NavProps {
+  startAnimation: boolean;
   homeRef: React.RefObject<HTMLDivElement>;
   aboutRef: React.RefObject<HTMLDivElement>;
   worksRef: React.RefObject<HTMLDivElement>;
@@ -31,16 +30,11 @@ const Nav = ({ startAnimation, homeRef, aboutRef, worksRef }: NavProps) => {
   return (
     <>
       <motion.nav
-        className={`font-gabarito text-fluid-md fixed top-0 left-0 z-20 flex w-screen items-center justify-between px-10 py-8 transition-all sm:px-20 ${
+        className={`font-gabarito text-fluid-md fixed top-0 left-0 z-20 flex w-screen items-center justify-between px-10 py-6 transition-all sm:px-20 ${
           isScrolled ? "bg-dark/5 backdrop-blur-sm" : "bg-transparent"
         }`}
       >
-        <motion.img
-          src={logo}
-          alt="logo"
-          className="size-16 sm:size-20"
-          {...(startAnimation ? popAnimation : {})}
-        />
+        <motion.img src={logo} alt="logo" className="size-14 rounded-md" />
         <motion.p
           className="font-geist text-fluid-md inline-flex items-center gap-2 font-semibold"
           initial="hidden"
@@ -48,7 +42,7 @@ const Nav = ({ startAnimation, homeRef, aboutRef, worksRef }: NavProps) => {
           variants={slideUpAnimation}
         >
           <MdOutlineComputer size={24} />
-          <TypingText text="y6miko.dev" speed={150} />
+          {startAnimation && <TypingText text="y6miko.dev" speed={150} />}
         </motion.p>
         <div className="sm:hidden">
           <FiMenu

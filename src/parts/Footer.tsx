@@ -30,7 +30,7 @@ const Footer = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-cPink transition-colors"
+                    className="hover:text-cPink underline transition-colors"
                   >
                     {social.name}
                   </a>

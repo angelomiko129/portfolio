@@ -27,7 +27,7 @@ const TypingText: React.FC<TypingTextProps> = ({ text, speed = 100 }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="text-fluid-md font-geist"
+      className="text-fluid-md font-clashDisplay"
     >
       {displayedText}
       <motion.span

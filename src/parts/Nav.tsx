@@ -2,9 +2,9 @@ import { useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import logo from "../assets/icon.svg";
 import { MdOutlineComputer } from "react-icons/md";
+import { FiMenu, FiX } from "react-icons/fi";
 import { parentAnimation, slideUpAnimation } from "@constants/variants.ts";
 import TypingText from "@components/TypingText.tsx";
-import { FiMenu, FiX } from "react-icons/fi";
 
 interface NavProps {
   startAnimation: boolean;
@@ -20,7 +20,7 @@ const Nav = ({ startAnimation, homeRef, aboutRef, worksRef }: NavProps) => {
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
-    setIsMenuOpen(false); // Close menu after navigation
+    setIsMenuOpen(false);
   };
 
   useMotionValueEvent(scrollY, "change", (latest: number) => {
@@ -75,7 +75,7 @@ const Nav = ({ startAnimation, homeRef, aboutRef, worksRef }: NavProps) => {
       </motion.nav>
       {isMenuOpen && (
         <motion.div
-          className="bg-dark/90 fixed top-0 left-0 z-20 flex h-screen w-screen flex-col items-center justify-center text-white sm:hidden"
+          className="bg-dark fixed top-0 left-0 z-20 flex h-screen w-screen flex-col items-center justify-center text-white sm:hidden"
           initial={{ opacity: 0, y: "-100%" }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: "-100%" }}

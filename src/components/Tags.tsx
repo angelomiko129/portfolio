@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 interface TagProps {
   label: string;
@@ -6,9 +7,12 @@ interface TagProps {
 
 const Tag: React.FC<TagProps> = ({ label }) => {
   return (
-    <button className="border-cWhite m-4 cursor-pointer rounded-md border px-4 py-3">
+    <motion.button
+      className="hover:bg-cPink m-4 cursor-pointer rounded-sm px-4 py-3 border"
+      whileHover={{ scale: 1.15 }}
+    >
       {label}
-    </button>
+    </motion.button>
   );
 };
 

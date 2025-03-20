@@ -72,6 +72,10 @@ h2 {
   font-size: var(--text-fluid-xxl);
 }
 
+h3 {
+  font-size: var(--text-fluid-xl);
+}
+
 p {
   font-size: var(--text-fluid-md);
 }

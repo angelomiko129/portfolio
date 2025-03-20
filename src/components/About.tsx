@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import profile from "@assets/profile.jpg";
+import { FaFacebook, FaTwitter, FaInstagram, FaTiktok } from "react-icons/fa";
 import { popParent, popAnimation } from "@constants/variants.ts";
 
 const About = () => {
@@ -11,19 +12,24 @@ const About = () => {
   return (
     <>
       <section className="section">
-        <h1 className="text-cPink">About Me</h1>
-        <div className="flex flex-col items-center gap-10 sm:flex-row sm:gap-36">
-          <div>
-            <img
-              src={profile}
-              alt="profile picture"
-              className="size-56 rounded-full sm:size-full"
+        <h1>About Me</h1>
+        <div className="bg-cWhite text-darkBrown font-clashDisplay flex flex-col items-center gap-10 rounded-xl p-6 sm:size-1/2 mx-4">
+          <img
+            src={profile}
+            alt="profile picture"
+            className="size-96 rounded-lg"
             />
-          </div>
-          <p className="text-fluid-xl! text-center sm:text-start">
+            <h2>Angelo Miko Botabara</h2>
+          <p className="text-fluid-lg! text-center w-96">
             I'm a full-stack developer & UI & UX designer with a passion for
             blending technical expertise with creative edge. Driven by
             curiosity, I always try to explore and learn new skills.
+          </p>
+          <p className="flex gap-4">
+            <FaFacebook size={30} />
+            <FaTwitter size={30} />
+            <FaInstagram size={30} />
+            <FaTiktok size={30} />
           </p>
         </div>
 

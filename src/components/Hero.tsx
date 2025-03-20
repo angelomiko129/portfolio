@@ -67,7 +67,7 @@ const Hero = ({ startAnimation }: StartAnimationProp) => {
             <AnimatePresence mode="wait">
               <motion.span
                 key={words[index]}
-                className="text-cPink/90 block flex text-4xl font-bold sm:text-6xl"
+                className="text-cPink/90 flex text-5xl font-bold sm:text-6xl"
               >
                 {words[index].split("").map((letter, i) => (
                   <motion.span

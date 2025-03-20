@@ -22,6 +22,6 @@ export interface Project {
   image: string;
   title: string;
   githubLink: string;
-  liveLink: string;
+  liveLink?: string;
   techStack: string[];
 }

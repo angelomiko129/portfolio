@@ -26,3 +26,4 @@ dist-ssr
 tailwind.config.ts
 eslint.config.js
 .prettierrc
+todo.txt

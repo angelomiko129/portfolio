@@ -10,7 +10,7 @@ const About = () => {
 
   return (
     <>
-      <section className="flex min-h-screen flex-col items-center justify-center gap-24 py-16 sm:px-40">
+      <section className="section">
         <h1 className="text-cPink">About Me</h1>
         <div className="flex flex-col items-center gap-10 sm:flex-row sm:gap-36">
           <div>

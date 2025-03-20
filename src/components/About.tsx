@@ -13,7 +13,7 @@ const About: React.FC = () => {
     <>
       <section className="section">
         <h1>About Me</h1>
-        <div className="bg-cWhite text-darkBrown font-clashDisplay mx-4 flex flex-col items-center gap-10 rounded-xl p-6 sm:size-1/2">
+        <div className="bg-cWhite text-darkBrown font-clashDisplay shadow-cWhite mx-4 flex flex-col items-center gap-10 rounded-xl p-6 shadow-md sm:size-1/2">
           <img
             src={profile}
             alt="profile picture"

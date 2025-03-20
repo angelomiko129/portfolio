@@ -1,5 +1,6 @@
 import { BsGithub } from "react-icons/bs";
 import recipeats from "@assets/sample/recipeats.png";
+import pokedex from "@assets/sample/pokedex.png";
 import { GoArrowUpRight } from "react-icons/go";
 import { Project } from "@/constants/props";
 import Tags from "./Tags";
@@ -19,6 +20,20 @@ const Works = () => {
         "TailwindCSS",
       ],
     },
+    {
+      image: pokedex,
+      title: "pokedex",
+      githubLink: "https://github.com/angelomiko129/pokedex-vite-app",
+      liveLink: "https://pokedex-vite-app.vercel.app/",
+      techStack: [
+        "PokeAPI",
+        "Express",
+        "Node",
+        "React",
+        "Javascript",
+        "TailwindCSS",
+      ],
+    },
   ];
 
   return (
@@ -31,7 +46,10 @@ const Works = () => {
           }`}
         >
           {projects.map((project, index) => (
-            <div key={index} className="flex flex-col">
+            <div
+              key={index}
+              className="shadow-cPink flex flex-col rounded-4xl shadow-lg"
+            >
               <img src={project.image} alt={`${project.title} image`} />
               <div className="bg-cPink flex items-center justify-between px-4 py-2">
                 <h3>{project.title}</h3>

@@ -6,7 +6,7 @@ const Tag: React.FC<TagProps> = ({ label }) => {
     <motion.button
       className="hover:bg-cPink m-4 cursor-pointer rounded-sm border px-4 py-3"
       whileHover={{ scale: 1.15 }}
-      whileTap={{ scale: 1.15, backgroundColor: "#d84040" }}
+      whileTap={{ scale: 1.15 }}
     >
       {label}
     </motion.button>

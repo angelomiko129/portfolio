@@ -202,6 +202,6 @@ li {
     @apply bg-background text-foreground;
   }
   .section {
-    @apply flex min-h-screen flex-col items-center justify-center gap-24 py-16 sm:px-40;
+    @apply flex min-h-screen flex-col items-center justify-center gap-10 py-16 sm:px-40;
   }
 }

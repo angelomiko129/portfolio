@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
-import logo from "../assets/icon.svg";
+import icon from "../assets/icon.svg";
 import { MdOutlineComputer } from "react-icons/md";
 import { FiMenu, FiX } from "react-icons/fi";
 import { parentAnimation, slideUpAnimation } from "@constants/variants.ts";
@@ -33,30 +33,31 @@ const Nav = ({ startAnimation, homeRef, aboutRef, worksRef }: NavProps) => {
 
   return (
     <>
-      <motion.nav
-        className={`font-gabarito text-fluid-md fixed top-0 left-0 z-20 flex w-screen items-center justify-between px-10 py-6 transition-all sm:px-20 ${
+      {/* Nav */}
+      <nav
+        className={`font-gabarito text-fluid-md fixed top-0 left-0 z-20 flex w-screen items-center justify-around py-6 transition-all ${
           isScrolled ? "bg-dark/5 backdrop-blur-sm" : "bg-transparent"
         }`}
       >
-        <motion.img src={logo} alt="logo" className="size-14 rounded-md" />
+        <img src={icon} alt="logo" className="size-11 rounded-md sm:size-14" />
         <motion.p
-          className="font-geist text-fluid-md inline-flex items-center gap-2 font-semibold"
+          className="inline-flex items-center gap-2"
           initial="hidden"
           animate={startAnimation && "show"}
           variants={slideUpAnimation}
         >
           <MdOutlineComputer size={24} />
-          {startAnimation && <TypingText text="y6miko.dev" speed={150} />}
+          {startAnimation && <TypingText text="y6miko.dev" speed={100} />}
         </motion.p>
         <div className="sm:hidden">
           <FiMenu
-            size={30}
+            size={26}
             className="cursor-pointer"
             onClick={() => setIsMenuOpen(true)}
           />
         </div>
         <motion.ul
-          className="hidden items-center gap-10 sm:flex"
+          className="hidden items-center gap-12 sm:flex"
           variants={parentAnimation}
           initial="hidden"
           animate={startAnimation && "show"}
@@ -65,7 +66,7 @@ const Nav = ({ startAnimation, homeRef, aboutRef, worksRef }: NavProps) => {
             <motion.li
               key={index}
               variants={slideUpAnimation}
-              className="cursor-pointer no-underline! hover:underline!"
+              className="cursor-pointer hover:underline!"
               onClick={() => {
                 if (item === "Home") scrollToSection(homeRef);
                 if (item === "About") scrollToSection(aboutRef);
@@ -76,35 +77,35 @@ const Nav = ({ startAnimation, homeRef, aboutRef, worksRef }: NavProps) => {
             </motion.li>
           ))}
         </motion.ul>
-      </motion.nav>
+      </nav>
       {isMenuOpen && (
         <motion.div
-          className="bg-dark fixed top-0 left-0 z-20 flex h-screen w-screen flex-col items-center justify-center text-white sm:hidden"
+          className="bg-dark fixed top-0 left-0 z-20 flex min-h-screen w-screen flex-col p-10 sm:hidden"
           initial={{ opacity: 0, y: "-100%" }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: "-100%" }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
         >
           <FiX
-            size={30}
-            className="absolute top-10 right-10 cursor-pointer"
+            size={26}
+            className="fixed top-10 right-10 cursor-pointer"
             onClick={() => setIsMenuOpen(false)}
           />
-          <ul className="flex flex-col items-center gap-8">
-            {["Home", "About", "Works"].map((item, index) => (
+          <ul className="flex flex-col gap-6">
+            {["home", "about", "works"].map((item, index) => (
               <motion.li
                 key={index}
-                className="text-fluid-lg cursor-pointer"
+                className="text-fluid-xxl cursor-pointer"
                 onClick={() => {
-                  if (item === "Home") scrollToSection(homeRef);
-                  if (item === "About") scrollToSection(aboutRef);
-                  if (item === "Works") scrollToSection(worksRef);
+                  if (item === "home") scrollToSection(homeRef);
+                  if (item === "about") scrollToSection(aboutRef);
+                  if (item === "works") scrollToSection(worksRef);
                 }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 20 }}
                 transition={{
-                  duration: 0.3,
+                  duration: 0.5,
                   ease: "easeInOut",
                   delay: index * 0.1,
                 }}

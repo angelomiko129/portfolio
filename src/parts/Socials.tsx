@@ -7,13 +7,13 @@ const Socials = ({ startAnimation }: StartAnimationProp) => {
   return (
     <>
       <motion.div
-        className="fixed bottom-6 left-20 z-10 hidden sm:block"
+        className="fixed bottom-8 left-20 z-10 hidden sm:block"
         initial="hidden"
         animate={startAnimation && "show"}
       >
         <motion.ul
           variants={parentAnimation}
-          className="inline-flex flex-col gap-8 rounded-full border-2 px-2 py-4"
+          className="inline-flex flex-col gap-6 rounded-full"
         >
           {socials.map((social, index) => (
             <motion.li key={index} variants={slideUpAnimation}>

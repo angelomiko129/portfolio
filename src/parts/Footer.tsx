@@ -6,7 +6,7 @@ const Footer = () => {
     <>
       <footer className="font-clashDisplay px-4 sm:px-40">
         <h1>CONTACTS</h1>
-        <div className="grid grid-cols-1 gap-10 py-10 text-wrap sm:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 py-10 text-wrap sm:grid-cols-3">
           <div>
             <div className="flex flex-col gap-4">
               <p className="text-cWhite/50">Email:</p>

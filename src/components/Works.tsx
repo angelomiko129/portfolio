@@ -41,15 +41,12 @@ const Works = () => {
       <section className="section font-clashDisplay">
         <h1>My Works</h1>
         <div
-          className={`grid items-center gap-4 rounded-2xl ${
-            projects.length > 1 ? "sm:grid-cols-2" : "justify-center"
+          className={`grid items-center gap-8 rounded-2xl ${
+            projects.length > 1 ? "sm:grid-cols-2" : "sm:grid-cols-1"
           }`}
         >
           {projects.map((project, index) => (
-            <div
-              key={index}
-              className="shadow-cPink flex flex-col rounded-4xl shadow-lg"
-            >
+            <div key={index} className="flex flex-col">
               <img src={project.image} alt={`${project.title} image`} />
               <div className="bg-cPink flex items-center justify-between px-4 py-2">
                 <h3>{project.title}</h3>
